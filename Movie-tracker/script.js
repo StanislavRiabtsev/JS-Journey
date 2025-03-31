@@ -1,6 +1,15 @@
 'use strict';
+let numberOfFilms;
 
-const numberOfFilms = +prompt("How many movies have you watched already?", "");
+function start() {
+    numberOfFilms = +prompt("How many movies have you watched already?", "");
+
+    while (numberOfFilms == "" || numberOfFilms == null || isNaN(numberOfFilms)) {
+        numberOfFilms = +prompt("How many movies have you watched already?", "");
+    }
+}
+
+start();
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -10,18 +19,24 @@ const personalMovieDB = {
     privat: false
 };
 
-for (let i = 0; i < 2; i++) {
-    const a = prompt("One of the last movies I watched?", ""),
-        b = prompt("How much would you rate it?", "");
+function rememberMyFilms() {
+    for (let i = 0; i < 2; i++) {
+        const a = prompt("One of the last movies I watched?", ""),
+            b = prompt("How much would you rate it?", "");
 
-    if (a != null && b != null && a != "" && b != "" && a.length < 50) {
-        personalMovieDB.movies[a] = b;
-        console.log("Done");
-    } else {
-        console.log("Error");
-        i--;
+        if (a != null && b != null && a != "" && b != "" && a.length < 50) {
+            personalMovieDB.movies[a] = b;
+            console.log("Done");
+        } else {
+            console.log("Error");
+            i--;
+        }
     }
+}
 
+// rememberMyFilms();
+
+function detectPersonalLevel() {
     if (personalMovieDB.count < 10) {
         console.log("Watched quite a few films");
     } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
@@ -31,7 +46,23 @@ for (let i = 0; i < 2; i++) {
     } else {
         console.log("Error");
     }
-
 }
 
-console.log(personalMovieDB);
+// detectPersonalLevel();
+
+function showMyDB(hidden) {
+    if (!hidden) {
+        console.log(personalMovieDB);
+    }
+}
+
+showMyDB(personalMovieDB.privat);
+
+function writeYourGenres() {
+    for (let i = 1; i <= 3; i++) {
+        personalMovieDB.genres[i - 1] = prompt(`Your favorite genre is numbered: ${i}`);
+    }
+}
+
+writeYourGenres();
+// console.log(personalMovieDB);
