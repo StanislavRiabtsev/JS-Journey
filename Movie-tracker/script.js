@@ -21,7 +21,7 @@ const personalMovieDB = {
 
 function rememberMyFilms() {
     for (let i = 0; i < 2; i++) {
-        const a = prompt("One of the last movies I watched?", ""),
+        const a = prompt("One of the last movies I watched?", "").trim(),
             b = prompt("How much would you rate it?", "");
 
         if (a != null && b != null && a != "" && b != "" && a.length < 50) {
@@ -34,7 +34,7 @@ function rememberMyFilms() {
     }
 }
 
-// rememberMyFilms();
+rememberMyFilms();
 
 function detectPersonalLevel() {
     if (personalMovieDB.count < 10) {
@@ -48,7 +48,7 @@ function detectPersonalLevel() {
     }
 }
 
-// detectPersonalLevel();
+detectPersonalLevel();
 
 function showMyDB(hidden) {
     if (!hidden) {
@@ -65,4 +65,4 @@ function writeYourGenres() {
 }
 
 writeYourGenres();
-// console.log(personalMovieDB);
+console.log(personalMovieDB);
