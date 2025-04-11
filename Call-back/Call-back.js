@@ -17,7 +17,7 @@ second();
 /////////////////////////////
 
 function learJS(lang, callback) {
-    console.log(`I learn ${lang}`);
+    console.log(`I learn: ${lang}`);
     callback();
 }
 
@@ -25,6 +25,4 @@ function done() {
     console.log("I learned this lesson");
 }
 
-learJS("Java Script", function () {
-
-});
+learJS("Java Script", done);
