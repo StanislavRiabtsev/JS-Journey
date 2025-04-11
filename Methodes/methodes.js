@@ -27,8 +27,10 @@ const numString = "12.3px";
 console.log(parseInt(numString));
 console.log(parseFloat(numString));
 
-////////////////////////////////////////
-// EXERCISE
+/////////////////////////////////////////////////
+// Coding Exercise 7: (*) Advanced Function Tasks
+/////////////////////////////////////////////////
+
 // #1
 function calculateVolumeAndArea(num) {
     if (num < 0 || num === String || !Number.isInteger(num)) {
@@ -53,7 +55,9 @@ function getCoupeNumber(place) {
 }
 getCoupeNumber(1);
 
-////////////////////////////////////////////
+/////////////////////////////////////////////////
+// Coding Exercise 8: (*) Advanced Function Tasks
+/////////////////////////////////////////////////
 
 // #1
 function getTimeFromMinutes(time) {
@@ -80,3 +84,19 @@ function findMaxNumber(num1, num2, num3, num4) {
     }
 }
 findMaxNumber(1, 2, 6, 22);
+
+/////////////////////////////////////////////////
+// Coding Exercise 9: (**) Fibonacci Numbers Interview Problem
+/////////////////////////////////////////////////
+
+function fib(numFib) {
+    let a = 0;
+    let b = 1;
+    for (i = 0; i < numFib; i++) {
+        console.log(i);
+        let next = a + b;
+        a = b;
+        b = next;
+    }
+}
+fib(4);
