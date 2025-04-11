@@ -52,3 +52,31 @@ function getCoupeNumber(place) {
     }
 }
 getCoupeNumber(1);
+
+////////////////////////////////////////////
+
+// #1
+function getTimeFromMinutes(time) {
+    if (time < 0 || time === String || !Number.isInteger(time)) {
+        console.log("Error, check the data");
+    } else {
+        timeHour = time / 60;
+        timeMinute = time % 60;
+        if (timeHour === 1) {
+            console.log(`It's ${parseInt(timeHour)} hour and ${timeMinute} minutes.`);
+        } else {
+            console.log(`It's ${parseInt(timeHour)} hours and ${timeMinute} minutes.`);
+        }
+    }
+}
+getTimeFromMinutes(60);
+
+// #2
+function findMaxNumber(num1, num2, num3, num4) {
+    if (arguments.length < 4 || [...arguments].some(arg => typeof arg !== 'number')) {
+        console.log(0);
+    } else {
+        console.log(Math.max(num1, num2, num3, num4));
+    }
+}
+findMaxNumber(1, 2, 6, 22);
