@@ -93,10 +93,10 @@ function fib(numFib) {
     let a = 0;
     let b = 1;
     for (i = 0; i < numFib; i++) {
-        console.log(i);
+        console.log(a);
         let next = a + b;
         a = b;
         b = next;
     }
 }
-fib(4);
+fib(7);
