@@ -119,22 +119,37 @@ const personalPlanPeter2 = {
 
 
 function showProgrammingLangs(plan) {
-    for (let key in plan) {
-        if (typeof (plan[key]) === 'object') {
-            for (let i in plan[key]) {
-                console.log(`Property ${i} has meaning: ${plan[key][i]}`);
-                if (typeof (plan[i]) === 'object') {
-                    for (let j in plan[key][i]) {
-                        console.log(`Property ${i} has meaning: ${plan[key][i][j]}`);
-                    }
-                }
-            }
-
-        } else {
-            console.log(`Property ${key} has meaning: ${plan[key]}`);
-        }
-        // return `The ${plan[key][i]} language is studied by ${plan[key]} The ${plan[key]} language is studied by ${plan[key]}`;
+    const lang = plan.skills.programmingLangs;
+    let result = "";
+    for (let key in lang) {
+        result += `The ${key} language is studied by ${lang[key]}\n`
     }
+    return result.trim();
 }
-showProgrammingLangs(personalPlanPeter2);
-// console.log(showProgrammingLangs(personalPlanPeter2));
+console.log(showProgrammingLangs(personalPlanPeter2));
+
+// #3
+const personalPlanPeter3 = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ua', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
+    },
+    showAgeAndLangs: function (plan) {
+        const { age } = plan;
+        const { languages } = plan.skills;
+        let str = `I am ${age} and I speak the following languages: `;
+
+        languages.forEach(function (lang) {
+            str += `${lang.toUpperCase()} `;
+        });
+
+        return str;
+    }
+};
+console.log(personalPlanPeter3.showAgeAndLangs(personalPlanPeter3));
