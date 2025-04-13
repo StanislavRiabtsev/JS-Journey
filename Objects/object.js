@@ -75,3 +75,66 @@ for (let key in options) {
 }
 
 console.log(counter);
+
+
+/////////////////////////////////////////////////
+// Coding Exercise 10: Object Problems
+/////////////////////////////////////////////////
+
+// #1
+const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
+    }
+};
+
+function showExperience(plan) {
+    const { exp } = plan.skills;
+    return exp;
+
+}
+
+console.log(showExperience(personalPlanPeter));
+
+// #2
+const personalPlanPeter2 = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
+    }
+};
+
+
+function showProgrammingLangs(plan) {
+    for (let key in plan) {
+        if (typeof (plan[key]) === 'object') {
+            for (let i in plan[key]) {
+                console.log(`Property ${i} has meaning: ${plan[key][i]}`);
+                if (typeof (plan[i]) === 'object') {
+                    for (let j in plan[key][i]) {
+                        console.log(`Property ${i} has meaning: ${plan[key][i][j]}`);
+                    }
+                }
+            }
+
+        } else {
+            console.log(`Property ${key} has meaning: ${plan[key]}`);
+        }
+        // return `The ${plan[key][i]} language is studied by ${plan[key]} The ${plan[key]} language is studied by ${plan[key]}`;
+    }
+}
+showProgrammingLangs(personalPlanPeter2);
+// console.log(showProgrammingLangs(personalPlanPeter2));
