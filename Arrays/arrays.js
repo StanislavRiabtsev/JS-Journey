@@ -47,3 +47,24 @@ const str = prompt("", "");
 const product = str.split(", ");
 product.sort();
 console.log(product);
+
+/////////////////////////////////////////////////
+// Coding Exercise 11: Array Problems
+/////////////////////////////////////////////////
+
+// #1
+const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+
+
+function showFamily(arr6) {
+    const result = "";
+    if (arr6 === "") {
+        console.log("The family is empty");
+    } else {
+        for (let value of arr6) {
+            result += `The family consists of:${arr6[value]}`
+            return result;
+        }
+    }
+}
+console.log(showFamily(...family));

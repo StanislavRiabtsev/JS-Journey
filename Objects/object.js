@@ -152,4 +152,4 @@ const personalPlanPeter3 = {
         return str;
     }
 };
-console.log(personalPlanPeter3.showAgeAndLangs(personalPlanPeter3));
+console.log(personalPlanPeter3.showAgeAndLangs(personalPlanPeter3));    
