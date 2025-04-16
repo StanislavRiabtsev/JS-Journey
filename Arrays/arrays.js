@@ -55,16 +55,51 @@ console.log(product);
 // #1
 const family = ['Peter', 'Ann', 'Alex', 'Linda'];
 
-
 function showFamily(arr6) {
-    const result = "";
-    if (arr6 === "") {
-        console.log("The family is empty");
+    if (arr6.length === 0) {
+        return "The family is empty";
     } else {
-        for (let value of arr6) {
-            result += `The family consists of:${arr6[value]}`
-            return result;
-        }
+        return `The family consists of: ${arr6.join(' ')}`;
     }
 }
-console.log(showFamily(...family));
+console.log(showFamily(family));
+
+// #2
+const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+function standardizeStrings(arr7) {
+    for (let value of arr7) {
+        console.log(value.toLowerCase());
+    }
+}
+standardizeStrings(favoriteCities);
+
+/////////////////////////////////////////////////
+// Coding Exercise 12: Array Problems Part 2
+/////////////////////////////////////////////////
+
+// #3
+const someString = 'This is some strange string';
+function reverse(str) {
+    if (typeof str !== 'string') {
+        console.log("Error!");
+    } else
+        console.log(str.split('').reverse().join(''));
+}
+reverse(someString);
+
+// #4
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'GPB', 'CNY'];
+
+function availableCurr(arr7, missingCurr) {
+    let str = '';
+    arr7.length === 0 ? str = 'No currencies available' : str = 'Available currencies:\n';
+
+    arr7.forEach(function (curr, i) {
+        if (curr !== missingCurr) {
+            str += `${curr}\n`;
+        }
+    });
+    return str;
+}
+console.log(availableCurr([...baseCurrencies, ...additionalCurrencies], 'CNY'));
