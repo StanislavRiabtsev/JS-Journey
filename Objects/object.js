@@ -152,4 +152,55 @@ const personalPlanPeter3 = {
         return str;
     }
 };
-console.log(personalPlanPeter3.showAgeAndLangs(personalPlanPeter3));    
+console.log(personalPlanPeter3.showAgeAndLangs(personalPlanPeter3));
+
+/////////////////////////////////////////////////
+// Coding Exercise 13: (*) Advanced Object and Array Task
+/////////////////////////////////////////////////
+
+const shoppingMallData = {
+    shops: [
+        {
+            width: 10,
+            length: 5
+        },
+        {
+            width: 15,
+            length: 7
+        },
+        {
+            width: 20,
+            length: 5
+        },
+        {
+            width: 8,
+            length: 10
+        }
+    ],
+    height: 5,
+    moneyPer1m3: 30,
+    budget: 50000
+}
+
+function isBudgetEnough(data) {
+    for (let key in data) {
+        if (typeof (data[key]) === 'object') {
+            for (let i in data[key]) {
+                console.log(`Property ${i} has meaning: ${data[key][i]}`);
+            }
+        } else {
+            console.log(`Property ${key} has meaning: ${data[key]}`);
+        }
+    }
+
+    for (let value of data.shops) {
+        console.log(value);
+    }
+
+    data.shop.forEach((item, index) => {
+        const area = item.width * item.length;
+        console.log(`Shop ${index + 1} area: ${area}`);
+    });
+
+}
+isBudgetEnough(shoppingMallData);
