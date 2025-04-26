@@ -16,10 +16,10 @@ function pow(x, n) {
     }
 }
 
-pow(2, 1)
-pow(2, 2)
-pow(2, 3)
-pow(2, 4)
+console.log(pow(2, 1));
+console.log(pow(2, 2));
+console.log(pow(2, 3));
+console.log(pow(2, 4));
 
 let students = {
     js: [{
@@ -42,7 +42,14 @@ let students = {
         pro: [{
             name: "Sam",
             progres: 10
-        }]
+        }],
+
+        semi: {
+            students: [{
+                name: "Test",
+                progres: 20
+            }]
+        }
     }
 }
 
@@ -71,9 +78,9 @@ function getTotalProgresByIteration(data) {
     return total / students;
 }
 
-console.log(getTotalProgresByIteration(students));
+// console.log(getTotalProgresByIteration(students));
 
-function getTotalProgresByRecursion(dara) {
+function getTotalProgresByRecursion(data) {
     if (Array.isArray(data)) {
         let total = 0;
 
@@ -94,3 +101,20 @@ function getTotalProgresByRecursion(dara) {
 
 const result = getTotalProgresByRecursion(students);
 console.log(result[0] / result[1]);
+
+/////////////////////////////////////////////////
+// Coding Exercise 16: (*) Recursion Problem
+/////////////////////////////////////////////////
+
+function factorial(n) {
+    if (n == 1) {
+        return n;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+console.log(factorial(1));
+console.log(factorial(2));
+console.log(factorial(3));
+console.log(factorial(4));
+console.log(factorial(5));
