@@ -1,26 +1,26 @@
-// function func(){
-//     smth = "String";
-// }
+function func() {
+    smth = "String";
+}
 
-// const someRes = getData();
-// const node = document.querySelector('.class');
+const someRes = getData();
+const node = document.querySelector('.class');
 
-// setInterval(function () {
-//     if (node) {
-//         node.innerHTML = someRes;
+setInterval(function () {
+    if (node) {
+        node.innerHTML = someRes;
 
-//     }
-// }, 1000);
+    }
+}, 1000);
 
 
-// function outer() {
-//     const potentiallyHugeArray = [];
-//     return function inner() {
-//         potentiallyHugeArray.push('Hello');
-//         console.log("World");
-//     }
-// }
-// const sayHello = outer();
+function outer() {
+    const potentiallyHugeArray = [];
+    return function inner() {
+        potentiallyHugeArray.push('Hello');
+        console.log("World");
+    }
+}
+const sayHello = outer();
 
 function createElemnt() {
     const div = document.createElement('div');
