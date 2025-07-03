@@ -108,7 +108,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function openModal() {
         modal.classList.add('show'),
-        modal.classList.remove('hide');
+            modal.classList.remove('hide');
         document.body.style.overflow = 'hidden';
         clearInterval(modalTimerId);
     }
@@ -119,7 +119,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function closeModal() {
         modal.classList.add('hide'),
-        modal.classList.remove('show');
+            modal.classList.remove('show');
         document.body.style.overflow = '';
     }
 
@@ -294,8 +294,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }, 4000);
     }
 
-
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
-        .then(response => response.json())
-        .then(json => console.log(json));
+    fetch('db.json')
+        .then(data => data.json())
+        .then(res => console.log(res));
 });
