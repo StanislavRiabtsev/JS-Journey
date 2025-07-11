@@ -64,3 +64,52 @@ lerna-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+
+# Проигнорировать временные файлы и логи
+/tmp
+/temp
+/logs
+
+# Проигнорировать директории сборки Webpack
+/build
+/dist
+/out
+
+# Проигнорировать файлы настроек Webpack, если они не предназначены для общего доступа
+# Если вы используете разные конфигурации для разных сред, возможно, вам стоит добавить их в .gitignore
+# /webpack.config.js
+# /webpack.*.js
+
+# Проигнорировать node_modules
+/node_modules
+
+# Проигнорировать файлы кэша npm
+.npm/
+
+# Проигнорировать файлы Yarn
+.yarn/
+yarn-error.log
+.pnp.*
+
+# Проигнорировать IDE-специфичные файлы
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+# Проигнорировать файлы операционной системы
+.DS_Store
+Thumbs.db
+
+# Проигнорировать файлы среды
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Проигнорировать индивидуальные файлы, которые могут создаваться при разработке
+*.log
+*.bak
