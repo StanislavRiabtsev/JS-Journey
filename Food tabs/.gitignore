@@ -1,66 +1,25 @@
-# === BACKEND (Java / Maven / IDEs) ===
+# === DEPENDENCIES ===
+node_modules/
 
-# Maven target directories
-target/
-!**/src/main/**/target/
-!**/src/test/**/target/
+# === BUILD FILES ===
+js/bundle.js
+js/bundle.js.map
 
-# Build directories
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+# === LOGS ===
+*.log
 
-# STS
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+# === ENVIRONMENT FILES ===
+.env
+.env.*.local
 
-# IntelliJ IDEA
+# === SYSTEM FILES ===
+.DS_Store
+Thumbs.db
+
+# === IDE / EDITORS ===
+.vscode/
 .idea/
 *.iml
-*.iws
-*.ipr
 
-# NetBeans
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-
-# Maven wrapper JAR
-!.mvn/wrapper/maven-wrapper.jar
-
-# === FRONTEND (Node.js / React) ===
-
-# Dependency directories
-node_modules/
-dist/
-dist-ssr/
-
-# Logs
-logs/
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-# === EDITORS / SYSTEM FILES ===
-
-# VS Code
-.vscode/
-!.vscode/extensions.json
-
-# General editor & system files
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# === TEMP / BACKUP ===
+*.bak
