@@ -1,115 +1,25 @@
-# === BACKEND (Java / Maven / IDEs) ===
-
-# Maven target directories
-target/
-!**/src/main/**/target/
-!**/src/test/**/target/
-
-# Build directories
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-# STS
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-# IntelliJ IDEA
-.idea/
-*.iml
-*.iws
-*.ipr
-
-# NetBeans
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-
-# Maven wrapper JAR
-!.mvn/wrapper/maven-wrapper.jar
-
-# === FRONTEND (Node.js / React) ===
-
-# Dependency directories
+# === DEPENDENCIES ===
 node_modules/
-dist/
-dist-ssr/
 
-# Logs
-logs/
+# === BUILD FILES ===
+js/bundle.js
+js/bundle.js.map
+
+# === LOGS ===
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-# === EDITORS / SYSTEM FILES ===
+# === ENVIRONMENT FILES ===
+.env
+.env.*.local
 
-# VS Code
-.vscode/
-!.vscode/extensions.json
-
-# General editor & system files
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-
-# Проигнорировать временные файлы и логи
-/tmp
-/temp
-/logs
-
-# Проигнорировать директории сборки Webpack
-/build
-/dist
-/out
-
-# Проигнорировать файлы настроек Webpack, если они не предназначены для общего доступа
-# Если вы используете разные конфигурации для разных сред, возможно, вам стоит добавить их в .gitignore
-# /webpack.config.js
-# /webpack.*.js
-
-# Проигнорировать node_modules
-/node_modules
-
-# Проигнорировать файлы кэша npm
-.npm/
-
-# Проигнорировать файлы Yarn
-.yarn/
-yarn-error.log
-.pnp.*
-
-# Проигнорировать IDE-специфичные файлы
-.idea/
-.vscode/
-*.iml
-*.iws
-*.ipr
-
-# Проигнорировать файлы операционной системы
+# === SYSTEM FILES ===
 .DS_Store
 Thumbs.db
 
-# Проигнорировать файлы среды
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# === IDE / EDITORS ===
+.vscode/
+.idea/
+*.iml
 
-# Проигнорировать индивидуальные файлы, которые могут создаваться при разработке
-*.log
+# === TEMP / BACKUP ===
 *.bak
