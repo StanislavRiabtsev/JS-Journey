@@ -20,7 +20,7 @@ This repository documents my journey of learning JavaScript. It includes:
 - Mini-projects to apply what I’ve learned in a practical way.
 
 ---
-
+```
 ## Repository Structure
 
 /
@@ -28,7 +28,7 @@ This repository documents my journey of learning JavaScript. It includes:
 ├── Food-tabs/ # Mini-projects
 ├── .gitignore
 └── README.md
-
+```
 
 ---
 
