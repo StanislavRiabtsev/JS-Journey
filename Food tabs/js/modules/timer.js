@@ -1,6 +1,4 @@
-function timer() {
-    //Timer
-    const dedline = '2025-05-23';
+function timer(id, dedline) {
     function getTimeRemaining(endtime) {
         let days, hours, minutes, seconds;
         const t = Date.parse(endtime) - Date.parse(new Date());
@@ -58,7 +56,7 @@ function timer() {
         }
     }
 
-    setClock('.timer', dedline);
+    setClock(id, dedline);
 };
 
 export default timer;

@@ -4,10 +4,9 @@ let path = require('path');
 
 module.exports = {
   mode: 'production',
-  entry: './js/script.js',
+  entry: './script.js',
   output: {
-    filename: 'bundle.js',
-    path: __dirname + '/js'
+    filename: 'bundle.js'
   },
   watch: true,
 
@@ -22,9 +21,9 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [['@babel/preset-env', {
-              debug: true,
-              corejs: 3,
-              useBuiltIns: "usage"
+                debug: true,
+                corejs: 3,
+                useBuiltIns: "usage"
             }]]
           }
         }
@@ -32,4 +31,3 @@ module.exports = {
     ]
   }
 };
-
