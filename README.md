@@ -9,7 +9,7 @@
 - [Getting Started](#DOM)
 - [Running Locally](#Food-tabs)
 - [Useful Resources](#Udemy)
-- [Author](#Stanisalv Riabtsev)
+- [Author](https://github.com/StanislavRiabtsev)
 ---
 
 ## About the Project
