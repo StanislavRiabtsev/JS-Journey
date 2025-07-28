@@ -2,27 +2,16 @@
 
 > My personal journey of learning JavaScript: notes, mini-projects, and code experiments.
 
-## 📚 Table of Contents
 
-- [About the Project](#Learning-JS)
-- [Repository Structure](#Food-tabs-is-project)
-- [Getting Started](#DOM)
-- [Running Locally](#Food-tabs)
-- [Useful Resources](#Udemy)
-- [Author](https://github.com/StanislavRiabtsev)
----
-
-## About the Project
+## 📚 About the Project
 
 This repository documents my journey of learning JavaScript. It includes:
 - Notes and summaries from courses, tutorials, and books.
 - Code examples that demonstrate specific concepts.
 - Mini-projects to apply what I’ve learned in a practical way.
 
----
-```
 ## Repository Structure
-
+```
 /
 ├── Ajax - Webpack/ # Learning notes and JS concepts
 ├── Food-tabs/ # Mini-projects
@@ -51,7 +40,9 @@ Here are some great resources I’m learning from:
 [Udemy course](https://www.udemy.com/course/javascript_full)
 
 
-## Author
-Stanislav Riabtsev
-[GitHub](https://github.com/StanislavRiabtsev) 
-[LinkedIn](https://www.linkedin.com/in/stanislav-riabtsev-4aa269244)
+## 🧠 Contact
+Author: Stanislav Riabtsev
+
+Reach out via: [Telegram](https://t.me/il_stas_li), [LinkedIn](https://www.linkedin.com/in/stanislav-riabtsev-4aa269244), or [GitHub](https://github.com/StanislavRiabtsev) profile
+
+Email: stasikrybcev@gmail.com
