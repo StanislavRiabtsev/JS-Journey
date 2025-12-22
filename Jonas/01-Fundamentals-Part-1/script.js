@@ -49,3 +49,8 @@ else if (scoreDolphins < scoreKoalas) {
 else if (scoreDolphins === scoreKoalas) {
     console.log("Both win the trophy");
 }
+
+
+
+const age1 = 20;
+age1 >= 18 ? console.log("I like to drink wine") : console.log("I like to drink wine")
