@@ -28,19 +28,40 @@
 // console.log(appleOrnageJuice);
 
 
-//  ==== Function declaration ====
-function caclAge1(birthYear) {
-    return 2027 - birthYear;
-}
+// //  ==== Function declaration ====
+// function caclAge1(birthYear) {
+//     return 2027 - birthYear;
+// }
 
-const age1 = caclAge1(1991);
-console.log(age1);
+// const age1 = caclAge1(1991);
+// console.log(age1);
 
 
-//  ==== Function expressions ====
+// //  ==== Function expressions ====
+// const caclAge2 = function (birthYear) {
+//     return 2027 - birthYear;
+// }
+
+// const age2 = caclAge2(2000);
+// console.log(age2);
+
+
+
 const caclAge2 = function (birthYear) {
     return 2027 - birthYear;
 }
 
-const age2 = caclAge2(2000);
-console.log(age2);
+// ==== Arrow function ====
+const caclAge3 = birthYear => 2027 - birthYear;
+const age3 = caclAge3(1991);
+console.log(age3);
+
+const yearsUntilRetirement = (birthYear, firstName) => {
+    const age = 2027 - birthYear;
+    const retirement = 65 - age;
+    // return retirement;
+    return `${firstName} retires in ${retirement} years`
+}
+
+console.log(yearsUntilRetirement(2000, 'Stanislav'));
+console.log(yearsUntilRetirement(1990, 'Bob'));
