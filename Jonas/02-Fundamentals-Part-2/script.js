@@ -124,25 +124,54 @@
 
 // checkWinner(scoreDolphins, scoreKoalas)
 
-const friend1 = 'Michael';
-const friend2 = 'Steven';
-const friend3 = 'Peter';
+// const friend1 = 'Michael';
+// const friend2 = 'Steven';
+// const friend3 = 'Peter';
+
+// const friends = ['Michael', 'Steven', 'Peter'];
+// console.log(friends);
+// // const years = new Array(1991, 1984, 2008, 2020);
+
+// console.log(years);
+
+
+// const calcAge = function (birthYear) {
+//     return 2037 - birthYear;
+// }
+// const years = [1990, 1967, 2002, 2010, 2018];
+// const age1 = calcAge(years[0])
+// const age2 = calcAge(years[1])
+// const age3 = calcAge(years[years.length - 1])
+// console.log(age1, age2, age3);
+
+// const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])]
+// console.log(ages);
 
 const friends = ['Michael', 'Steven', 'Peter'];
+// Add elements
+const newLength = friends.push('Jay');
 console.log(friends);
-// const years = new Array(1991, 1984, 2008, 2020);
+console.log(newLength);
 
-console.log(years);
+friends.unshift('John'); // First
+console.log(friends);
 
+// Remove elements
+friends.pop(); //Last 
+const popped = friends.pop();
+console.log(popped);
+console.log(friends);
 
-const calcAge = function (birthYear) {
-    return 2037 - birthYear;
-}
-const years = [1990, 1967, 2002, 2010, 2018];
-const age1 = calcAge(years[0])
-const age2 = calcAge(years[1])
-const age3 = calcAge(years[years.length - 1])
-console.log(age1, age2, age3);
+friends.shift('John'); //First
+console.log(friends);
 
-const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])]
-console.log(ages);
+console.log(friends.indexOf('Steven'));
+
+friends.push(23)
+console.log(friends.includes('Steven'));
+console.log(friends.includes('Bob'));
+console.log(friends.includes('23'));
+
+if(friends.includes('Steven')){
+    console.log('You have a friend called Steven');
+} 
