@@ -147,49 +147,58 @@
 // const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])]
 // console.log(ages);
 
-const friends = ['Michael', 'Steven', 'Peter'];
-// Add elements
-const newLength = friends.push('Jay');
-console.log(friends);
-console.log(newLength);
+// const friends = ['Michael', 'Steven', 'Peter'];
+// // Add elements
+// const newLength = friends.push('Jay');
+// console.log(friends);
+// console.log(newLength);
 
-friends.unshift('John'); // First
-console.log(friends);
+// friends.unshift('John'); // First
+// console.log(friends);
 
-// Remove elements
-friends.pop(); //Last 
-const popped = friends.pop();
-console.log(popped);
-console.log(friends);
+// // Remove elements
+// friends.pop(); //Last 
+// const popped = friends.pop();
+// console.log(popped);
+// console.log(friends);
 
-friends.shift('John'); //First
-console.log(friends);
+// friends.shift('John'); //First
+// console.log(friends);
 
-console.log(friends.indexOf('Steven'));
+// console.log(friends.indexOf('Steven'));
 
-friends.push(23)
-console.log(friends.includes('Steven'));
-console.log(friends.includes('Bob'));
-console.log(friends.includes('23'));
+// friends.push(23)
+// console.log(friends.includes('Steven'));
+// console.log(friends.includes('Bob'));
+// console.log(friends.includes('23'));
 
-if (friends.includes('Steven')) {
-    console.log('You have a friend called Steven');
-}
+// if (friends.includes('Steven')) {
+//     console.log('You have a friend called Steven');
+// }
 
-function calcTip(bill) {
-    let tip;
-    if (bill >= 50 && bill <= 300) {
-        tip = bill * 0.15
-        console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
-    } else {
-        tip = bill * 0.2
-        console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
-    }
-    return tip;
-}
+// function calcTip(bill) {
+//     let tip;
+//     if (bill >= 50 && bill <= 300) {
+//         tip = bill * 0.15
+//         console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
+//     } else {
+//         tip = bill * 0.2
+//         console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
+//     }
+//     return tip;
+// }
 
-const bills = [125, 555, 44];
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
-console.log(tips);
-const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]]
-console.log(totals);
+// const bills = [125, 555, 44];
+// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+// console.log(tips);
+// const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]]
+// console.log(totals);
+
+
+const stanislav = {
+    firstName: 'Stanislav',
+    lastName: 'Riabtsev',
+    age: 2026-2005,
+    job: 'student',
+    friends: ['michal', 'peter']
+};
