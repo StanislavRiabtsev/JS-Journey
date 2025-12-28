@@ -198,7 +198,28 @@
 const stanislav = {
     firstName: 'Stanislav',
     lastName: 'Riabtsev',
-    age: 2026-2005,
+    age: 2026 - 2005,
     job: 'student',
     friends: ['michal', 'peter']
 };
+
+console.log(stanislav.lastName);
+
+const nameKey = 'Name';
+console.log(stanislav['first' + nameKey]);
+
+// const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job and friends');
+
+// if (stanislav[interestedIn]) {
+//     console.log(stanislav[interestedIn]);
+// } else {
+//     console.log('Wrong request! Choose between firstName, lastName, age, job and friends');
+// }
+
+stanislav.location = 'Poland'
+stanislav['twitter'] = '@stanislavriabtse'
+console.log(stanislav);
+
+
+
+console.log(`${stanislav.firstName} has ${stanislav.friends.length} friends, and his best friend is called ${stanislav.friends[0]}`);
