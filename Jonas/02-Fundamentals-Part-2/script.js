@@ -225,62 +225,67 @@
 // console.log(`${stanislav.firstName} has ${stanislav.friends.length} friends, and his best friend is called ${stanislav.friends[0]}`);
 
 
-const stanislav = {
-    firstName: 'Stanislav',
-    lastName: 'Riabtsev',
-    birthYear: 2005,
-    job: 'student',
-    friends: ['michal', 'peter'],
-    hasDriversLicense: true,
+// const stanislav = {
+//     firstName: 'Stanislav',
+//     lastName: 'Riabtsev',
+//     birthYear: 2005,
+//     job: 'student',
+//     friends: ['michal', 'peter'],
+//     hasDriversLicense: true,
 
-    // calcAge: function (birthYear) {
-    //     return 2037 - birthYear;
-    // }
+//     // calcAge: function (birthYear) {
+//     //     return 2037 - birthYear;
+//     // }
 
-    // calcAge: function () {
-    //     return 2037 - this.birthYear;
-    // }
+//     // calcAge: function () {
+//     //     return 2037 - this.birthYear;
+//     // }
 
-    calcAge: function () {
-        this.age = 2037 - this.birthYear
-        return this.age
-    },
+//     calcAge: function () {
+//         this.age = 2037 - this.birthYear
+//         return this.age
+//     },
 
-    getSummary: function () {
-        return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license`
-    }
+//     getSummary: function () {
+//         return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license`
+//     }
 
-};
+// };
 
-console.log(stanislav.calcAge());
-console.log(stanislav);
-// console.log(stanislav['calcAge'](2005));
-console.log(stanislav.getSummary());
+// console.log(stanislav.calcAge());
+// console.log(stanislav);
+// // console.log(stanislav['calcAge'](2005));
+// console.log(stanislav.getSummary());
 
 
-//  *******CHALLENGE #3*******
-const mark = {
-    fullName: 'Mark Miller',
-    mass: 78,
-    height: 1.69,
-    calcBMI: function () {
-        this.bmi = this.mass / (this.height * this.height)
-        return this.bmi
-    }
-}
+// //  *******CHALLENGE #3*******
+// const mark = {
+//     fullName: 'Mark Miller',
+//     mass: 78,
+//     height: 1.69,
+//     calcBMI: function () {
+//         this.bmi = this.mass / (this.height * this.height)
+//         return this.bmi
+//     }
+// }
 
-const john = {
-    fullName: 'John Smith',
-    mass: 92,
-    height: 1.95,
-    calcBMI: function () {
-        this.bmi = this.mass / (this.height * this.height)
-        return this.bmi
-    }
-}
+// const john = {
+//     fullName: 'John Smith',
+//     mass: 92,
+//     height: 1.95,
+//     calcBMI: function () {
+//         this.bmi = this.mass / (this.height * this.height)
+//         return this.bmi
+//     }
+// }
 
-if (mark.calcBMI() > john.calcBMI()) {
-    console.log(`${john.fullName}'s BMI ${john.calcBMI()} is higher than ${mark.fullName}'s ${mark.calcBMI()}!`);
-} else {
-    console.log(`${mark.fullName}'s BMI ${mark.calcBMI()} is higher than ${john.fullName}'s ${john.calcBMI()}!`);
+// if (mark.calcBMI() > john.calcBMI()) {
+//     console.log(`${john.fullName}'s BMI ${john.calcBMI()} is higher than ${mark.fullName}'s ${mark.calcBMI()}!`);
+// } else {
+//     console.log(`${mark.fullName}'s BMI ${mark.calcBMI()} is higher than ${john.fullName}'s ${john.calcBMI()}!`);
+// }
+
+
+for (let rep = 1; rep <= 10; rep++) {
+    console.log(`Lifting weights repetition ${rep}`);
 }
