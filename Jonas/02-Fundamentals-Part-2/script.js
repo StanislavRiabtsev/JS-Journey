@@ -286,6 +286,51 @@
 // }
 
 
-for (let rep = 1; rep <= 10; rep++) {
-    console.log(`Lifting weights repetition ${rep}`);
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`Lifting weights repetition ${rep}`);
+// }
+
+
+const stanislavArray = [
+    'Stanislav',
+    'Riabtsev',
+    2026 - 2005,
+    'student',
+    ['michal', 'peter']
+];
+
+const types = [];
+
+for (let i = 0; i < stanislavArray.length; i++) {
+    //Reading from stanislav array
+    console.log(stanislavArray[i], typeof stanislavArray[i]);
+
+    //Filling types array
+    // types[i] = typeof stanislavArray[i];
+    types.push(typeof stanislavArray[i])
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+    ages.push(2037 - years[i]);
+}
+console.log(ages);
+
+
+console.log('--- ONLY STRINGS ---');
+for (let i = 0; i < stanislavArray.length; i++) {
+    if (typeof stanislavArray[i] !== 'string') continue;
+
+    console.log(stanislavArray[i], typeof stanislavArray[i]);
+}
+
+console.log('--- BREAK WITH NUMBER ---');
+for (let i = 0; i < stanislavArray.length; i++) {
+    if (typeof stanislavArray[i] == 'number') break;
+
+    console.log(stanislavArray[i], typeof stanislavArray[i]);
 }
