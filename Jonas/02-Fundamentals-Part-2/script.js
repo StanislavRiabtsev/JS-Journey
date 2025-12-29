@@ -195,31 +195,92 @@
 // console.log(totals);
 
 
+// const stanislav = {
+//     firstName: 'Stanislav',
+//     lastName: 'Riabtsev',
+//     age: 2026 - 2005,
+//     job: 'student',
+//     friends: ['michal', 'peter']
+// };
+
+// console.log(stanislav.lastName);
+
+// const nameKey = 'Name';
+// console.log(stanislav['first' + nameKey]);
+
+// // const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job and friends');
+
+// // if (stanislav[interestedIn]) {
+// //     console.log(stanislav[interestedIn]);
+// // } else {
+// //     console.log('Wrong request! Choose between firstName, lastName, age, job and friends');
+// // }
+
+// stanislav.location = 'Poland'
+// stanislav['twitter'] = '@stanislavriabtse'
+// console.log(stanislav);
+
+
+
+// console.log(`${stanislav.firstName} has ${stanislav.friends.length} friends, and his best friend is called ${stanislav.friends[0]}`);
+
+
 const stanislav = {
     firstName: 'Stanislav',
     lastName: 'Riabtsev',
-    age: 2026 - 2005,
+    birthYear: 2005,
     job: 'student',
-    friends: ['michal', 'peter']
+    friends: ['michal', 'peter'],
+    hasDriversLicense: true,
+
+    // calcAge: function (birthYear) {
+    //     return 2037 - birthYear;
+    // }
+
+    // calcAge: function () {
+    //     return 2037 - this.birthYear;
+    // }
+
+    calcAge: function () {
+        this.age = 2037 - this.birthYear
+        return this.age
+    },
+
+    getSummary: function () {
+        return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license`
+    }
+
 };
 
-console.log(stanislav.lastName);
-
-const nameKey = 'Name';
-console.log(stanislav['first' + nameKey]);
-
-// const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job and friends');
-
-// if (stanislav[interestedIn]) {
-//     console.log(stanislav[interestedIn]);
-// } else {
-//     console.log('Wrong request! Choose between firstName, lastName, age, job and friends');
-// }
-
-stanislav.location = 'Poland'
-stanislav['twitter'] = '@stanislavriabtse'
+console.log(stanislav.calcAge());
 console.log(stanislav);
+// console.log(stanislav['calcAge'](2005));
+console.log(stanislav.getSummary());
 
 
+//  *******CHALLENGE #3*******
+const mark = {
+    fullName: 'Mark Miller',
+    mass: 78,
+    height: 1.69,
+    calcBMI: function () {
+        this.bmi = this.mass / (this.height * this.height)
+        return this.bmi
+    }
+}
 
-console.log(`${stanislav.firstName} has ${stanislav.friends.length} friends, and his best friend is called ${stanislav.friends[0]}`);
+const john = {
+    fullName: 'John Smith',
+    mass: 92,
+    height: 1.95,
+    calcBMI: function () {
+        this.bmi = this.mass / (this.height * this.height)
+        return this.bmi
+    }
+}
+
+if (mark.calcBMI() > john.calcBMI()) {
+    console.log(`${john.fullName}'s BMI ${john.calcBMI()} is higher than ${mark.fullName}'s ${mark.calcBMI()}!`);
+} else {
+    console.log(`${mark.fullName}'s BMI ${mark.calcBMI()} is higher than ${john.fullName}'s ${john.calcBMI()}!`);
+}
