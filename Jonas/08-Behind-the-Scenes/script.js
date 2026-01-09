@@ -26,43 +26,74 @@
 // // console.log(age);
 // // printAge();
 
-// Varibles
-console.log(me);
-// console.log(job);
-// console.log(year);
+// // Varibles
+// console.log(me);
+// // console.log(job);
+// // console.log(year);
 
-var me = 'Stanislav';
-let job = 'teacher';
-const year = 1991;
+// var me = 'Stanislav';
+// let job = 'teacher';
+// const year = 1991;
 
-// Functions
-console.log(addDecl(2, 3));
-console.log(addExpr(2, 3));
-console.log(addArrow(2, 3));
+// // Functions
+// console.log(addDecl(2, 3));
+// console.log(addExpr(2, 3));
+// console.log(addArrow(2, 3));
 
-function addDecl(a, b) {
-  return a + b;
-}
+// function addDecl(a, b) {
+//   return a + b;
+// }
 
-const addExpr = function (a, b) {
-  return a + b;
+// const addExpr = function (a, b) {
+//   return a + b;
+// };
+
+// const addArrow = (a, b) => a + b;
+
+// // Example
+// console.log(numProducts);
+// if (!numProducts) deleteShoppingCart();
+// var numProducts = 10;
+
+// function deleteShoppingCart() {
+//   console.log('All products deleted!');
+// }
+
+// var x = 1;
+// let y = 2;
+// const z = 3;
+
+// console.log(x === window.x);
+// console.log(y === window.y);
+// console.log(z === window.z);
+
+const calcAge = function (birthYear) {
+  console.log(2037 - birthYear);
+  console.log(this);
+};
+calcAge(1991);
+
+const calcAgeArrow = birthYear => {
+  console.log(2037 - birthYear);
+  console.log(this);
+};
+calcAgeArrow(1980);
+
+const stanislav = {
+  year: 1991,
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+  },
+};
+stanislav.calcAge();
+
+const matilda = {
+  year: 2017,
 };
 
-const addArrow = (a, b) => a + b;
+matilda.calcAge = stanislav.calcAge;
+matilda.calcAge();
 
-// Example
-console.log(numProducts);
-if (!numProducts) deleteShoppingCart();
-var numProducts = 10;
-
-function deleteShoppingCart() {
-  console.log('All products deleted!');
-}
-
-var x = 1;
-let y = 2;
-const z = 3;
-
-console.log(x === window.x);
-console.log(y === window.y);
-console.log(z === window.z);
+const f = stanislav.calcAge;
+f();
