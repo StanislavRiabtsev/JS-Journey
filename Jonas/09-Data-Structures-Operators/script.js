@@ -42,6 +42,81 @@
 // const [p = 1, q = 1, r = 1] = [8, 9];
 // console.log(p, q, r);
 
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+//   openingHours: {
+//     thu: {
+//       open: 12,
+//       close: 22,
+//     },
+//     fri: {
+//       open: 11,
+//       close: 23,
+//     },
+//     sat: {
+//       open: 0, // Open 24 hours
+//       close: 24,
+//     },
+//   },
+//   order: function (starterIndex, mianIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mianIndex]];
+//   },
+//   orderDelivery: function ({
+//     starterIndex = 1,
+//     mianIndex = 0,
+//     time = '20:00',
+//     address,
+//   }) {
+//     console.log(
+//       `Order recevied! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mianIndex]} will be delivered to ${address} at ${time}`
+//     );
+//   },
+// };
+
+// restaurant.orderDelivery({
+//   time: '22:30',
+//   address: 'Baraniaka',
+//   mianIndex: 2,
+//   starterIndex: 2,
+// });
+
+// restaurant.orderDelivery({
+//   address: 'Baraniaka',
+//   starterIndex: 2,
+// });
+
+// const { name, openingHours, categories } = restaurant;
+// console.log(name, openingHours, categories);
+
+// const {
+//   name: restaurantName,
+//   openingHours: hours,
+//   categories: tags,
+// } = restaurant;
+// console.log(restaurantName, hours, tags);
+
+// // Default variables
+// const { menu = [], starterMenu: strters = [] } = restaurant;
+// console.log(menu, strters);
+
+// // Mutating variables
+// let a = 111;
+// let b = 999;
+// const obj = { a: 23, b: 7, c: 14 };
+// ({ a, b } = obj);
+// console.log(a, b);
+
+// // Nested objects
+// const {
+//   fri: { open: o, close: c },
+// } = openingHours;
+// console.log(o, c);
+
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -76,43 +151,45 @@ const restaurant = {
       `Order recevied! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mianIndex]} will be delivered to ${address} at ${time}`
     );
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is you declicious pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
 };
 
-restaurant.orderDelivery({
-  time: '22:30',
-  address: 'Baraniaka',
-  mianIndex: 2,
-  starterIndex: 2,
-});
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+console.log(...newArr);
 
-restaurant.orderDelivery({
-  address: 'Baraniaka',
-  starterIndex: 2,
-});
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
 
-const { name, openingHours, categories } = restaurant;
-console.log(name, openingHours, categories);
+const mainMenCopy = [...restaurant.mainMenu];
+console.log(mainMenCopy);
 
-const {
-  name: restaurantName,
-  openingHours: hours,
-  categories: tags,
-} = restaurant;
-console.log(restaurantName, hours, tags);
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menu);
 
-// Default variables
-const { menu = [], starterMenu: strters = [] } = restaurant;
-console.log(menu, strters);
+const str = 'Stanislav';
+const letters = [...str, ' ', 'S.'];
+console.log(letters);
 
-// Mutating variables
-let a = 111;
-let b = 999;
-const obj = { a: 23, b: 7, c: 14 };
-({ a, b } = obj);
-console.log(a, b);
+const ingredients = [
+  //   prompt('Lets make pasta! Ingredient 1?'),
+  //   prompt('Ingredient 2?'),
+  //   prompt('Ingredient 3?'),
+];
+console.log(ingredients);
 
-// Nested objects
-const {
-  fri: { open: o, close: c },
-} = openingHours;
-console.log(o, c);
+restaurant.orderPasta(...ingredients);
+
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guiseppe' };
+console.log(newRestaurant);
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorente Roma';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
