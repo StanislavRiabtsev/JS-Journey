@@ -383,6 +383,81 @@
 // const guestCorrect = restaurant.numGuests ?? 10;
 // console.log(guestCorrect);
 
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+//   openingHours: {
+//     thu: {
+//       open: 12,
+//       close: 22,
+//     },
+//     fri: {
+//       open: 11,
+//       close: 23,
+//     },
+//     sat: {
+//       open: 0, // Open 24 hours
+//       close: 24,
+//     },
+//   },
+//   order: function (starterIndex, mianIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mianIndex]];
+//   },
+//   orderDelivery: function ({
+//     starterIndex = 1,
+//     mianIndex = 0,
+//     time = '20:00',
+//     address,
+//   }) {
+//     console.log(
+//       `Order recevied! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mianIndex]} will be delivered to ${address} at ${time}`
+//     );
+//   },
+//   orderPasta: function (ing1, ing2, ing3) {
+//     console.log(
+//       `Here is you declicious pasta with ${ing1}, ${ing2} and ${ing3}`
+//     );
+//   },
+//   orderPizza: function (mainIngredient, ...otherIngredients) {
+//     console.log(mainIngredient);
+//     console.log(otherIngredients);
+//   },
+// };
+
+// const rest1 = {
+//   name: 'Capri',
+//   // numGuest: 20,
+//   numGuest: 0,
+// };
+
+// const rest2 = {
+//   name: 'Capri',
+//   owner: 'Giovanni Rossi',
+// };
+
+// // OR ASSIGNMENT OPERATOR
+// // rest1.numGuest = rest1.numGuest || 10;
+// // rest2.numGuest = rest2.numGuest || 10;
+// // rest1.numGuest ||= 10;
+// // rest2.numGuest ||= 10;
+
+// // NULLISH ASSIGNMENT OPERATOR (NULL OR UNDEFINED)
+// rest1.numGuest ??= 10;
+// rest2.numGuest ??= 10;
+
+// // AND ASSIGNMENT OPERATOR
+// // rest1.owner = rest1.owner && '<ANONYMOUS>';
+// // rest2.owner = rest2.owner && '<ANONYMOUS>';
+// rest1.numGuest &&= '<ANONYMOUS>';
+// rest2.numGuest &&= '<ANONYMOUS>';
+
+// console.log(rest1);
+// console.log(rest2);
+
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -428,32 +503,12 @@ const restaurant = {
   },
 };
 
-const rest1 = {
-  name: 'Capri',
-  // numGuest: 20,
-  numGuest: 0,
-};
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
-const rest2 = {
-  name: 'Capri',
-  owner: 'Giovanni Rossi',
-};
+for (const item of menu) {
+  console.log(item);
+}
 
-// OR ASSIGNMENT OPERATOR
-// rest1.numGuest = rest1.numGuest || 10;
-// rest2.numGuest = rest2.numGuest || 10;
-// rest1.numGuest ||= 10;
-// rest2.numGuest ||= 10;
-
-// NULLISH ASSIGNMENT OPERATOR (NULL OR UNDEFINED)
-rest1.numGuest ??= 10;
-rest2.numGuest ??= 10;
-
-// AND ASSIGNMENT OPERATOR
-// rest1.owner = rest1.owner && '<ANONYMOUS>';
-// rest2.owner = rest2.owner && '<ANONYMOUS>';
-rest1.numGuest &&= '<ANONYMOUS>';
-rest2.numGuest &&= '<ANONYMOUS>';
-
-console.log(rest1);
-console.log(rest2);
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
