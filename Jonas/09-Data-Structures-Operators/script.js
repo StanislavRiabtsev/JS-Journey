@@ -383,12 +383,221 @@
 // const guestCorrect = restaurant.numGuests ?? 10;
 // console.log(guestCorrect);
 
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+//   openingHours: {
+//     thu: {
+//       open: 12,
+//       close: 22,
+//     },
+//     fri: {
+//       open: 11,
+//       close: 23,
+//     },
+//     sat: {
+//       open: 0, // Open 24 hours
+//       close: 24,
+//     },
+//   },
+//   order: function (starterIndex, mianIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mianIndex]];
+//   },
+//   orderDelivery: function ({
+//     starterIndex = 1,
+//     mianIndex = 0,
+//     time = '20:00',
+//     address,
+//   }) {
+//     console.log(
+//       `Order recevied! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mianIndex]} will be delivered to ${address} at ${time}`
+//     );
+//   },
+//   orderPasta: function (ing1, ing2, ing3) {
+//     console.log(
+//       `Here is you declicious pasta with ${ing1}, ${ing2} and ${ing3}`
+//     );
+//   },
+//   orderPizza: function (mainIngredient, ...otherIngredients) {
+//     console.log(mainIngredient);
+//     console.log(otherIngredients);
+//   },
+// };
+
+// const rest1 = {
+//   name: 'Capri',
+//   // numGuest: 20,
+//   numGuest: 0,
+// };
+
+// const rest2 = {
+//   name: 'Capri',
+//   owner: 'Giovanni Rossi',
+// };
+
+// // OR ASSIGNMENT OPERATOR
+// // rest1.numGuest = rest1.numGuest || 10;
+// // rest2.numGuest = rest2.numGuest || 10;
+// // rest1.numGuest ||= 10;
+// // rest2.numGuest ||= 10;
+
+// // NULLISH ASSIGNMENT OPERATOR (NULL OR UNDEFINED)
+// rest1.numGuest ??= 10;
+// rest2.numGuest ??= 10;
+
+// // AND ASSIGNMENT OPERATOR
+// // rest1.owner = rest1.owner && '<ANONYMOUS>';
+// // rest2.owner = rest2.owner && '<ANONYMOUS>';
+// rest1.numGuest &&= '<ANONYMOUS>';
+// rest2.numGuest &&= '<ANONYMOUS>';
+
+// console.log(rest1);
+// console.log(rest2);
+
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+//   openingHours: {
+//     thu: {
+//       open: 12,
+//       close: 22,
+//     },
+//     fri: {
+//       open: 11,
+//       close: 23,
+//     },
+//     sat: {
+//       open: 0, // Open 24 hours
+//       close: 24,
+//     },
+//   },
+//   order: function (starterIndex, mianIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mianIndex]];
+//   },
+//   orderDelivery: function ({
+//     starterIndex = 1,
+//     mianIndex = 0,
+//     time = '20:00',
+//     address,
+//   }) {
+//     console.log(
+//       `Order recevied! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mianIndex]} will be delivered to ${address} at ${time}`
+//     );
+//   },
+//   orderPasta: function (ing1, ing2, ing3) {
+//     console.log(
+//       `Here is you declicious pasta with ${ing1}, ${ing2} and ${ing3}`
+//     );
+//   },
+//   orderPizza: function (mainIngredient, ...otherIngredients) {
+//     console.log(mainIngredient);
+//     console.log(otherIngredients);
+//   },
+// };
+
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+// for (const item of menu) {
+//   console.log(item);
+// }
+
+// for (const [i, el] of menu.entries()) {
+//   console.log(`${i + 1}: ${el}`);
+// }
+
+// const game = {
+//   team1: 'Bayern Munich',
+//   team2: 'Borrussia Dortmund',
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimmich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski',
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Gotze',
+//     ],
+//   ],
+//   score: '4:0',
+//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+// };
+
+// const [players1, players2] = game.players;
+// console.log(players1, players2);
+// const [gk, ...fieldPlayers] = players1;
+// console.log(gk, fieldPlayers);
+// const allPlayers = [...players1, ...players2];
+// console.log(allPlayers);
+// const players1Final = [...players1, 'Thiago', 'Coutinho', 'Periscic'];
+// console.log(players1Final);
+// const {
+//   odds: { team1, x: draw, team2 },
+// } = game;
+// console.log(team1, draw, team2);
+// const printGoals = function (...players) {
+//   console.log(`${players.length} goals were scored`);
+// };
+// // printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+// printGoals(...game.scored);
+// team1 < team2 && console.log('Team 1 is more likely to win');
+// team1 > team2 && console.log('Team 2 is more likely to win');
+
+const weekDays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+const openingHours = {
+  [weekDays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  openingHours,
 
   openingHours: {
     thu: {
@@ -404,56 +613,21 @@ const restaurant = {
       close: 24,
     },
   },
-  order: function (starterIndex, mianIndex) {
+  order(starterIndex, mianIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mianIndex]];
   },
-  orderDelivery: function ({
-    starterIndex = 1,
-    mianIndex = 0,
-    time = '20:00',
-    address,
-  }) {
+  orderDelivery({ starterIndex = 1, mianIndex = 0, time = '20:00', address }) {
     console.log(
       `Order recevied! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mianIndex]} will be delivered to ${address} at ${time}`
     );
   },
-  orderPasta: function (ing1, ing2, ing3) {
+  orderPasta(ing1, ing2, ing3) {
     console.log(
       `Here is you declicious pasta with ${ing1}, ${ing2} and ${ing3}`
     );
   },
-  orderPizza: function (mainIngredient, ...otherIngredients) {
+  orderPizza(mainIngredient, ...otherIngredients) {
     console.log(mainIngredient);
     console.log(otherIngredients);
   },
 };
-
-const rest1 = {
-  name: 'Capri',
-  // numGuest: 20,
-  numGuest: 0,
-};
-
-const rest2 = {
-  name: 'Capri',
-  owner: 'Giovanni Rossi',
-};
-
-// OR ASSIGNMENT OPERATOR
-// rest1.numGuest = rest1.numGuest || 10;
-// rest2.numGuest = rest2.numGuest || 10;
-// rest1.numGuest ||= 10;
-// rest2.numGuest ||= 10;
-
-// NULLISH ASSIGNMENT OPERATOR (NULL OR UNDEFINED)
-rest1.numGuest ??= 10;
-rest2.numGuest ??= 10;
-
-// AND ASSIGNMENT OPERATOR
-// rest1.owner = rest1.owner && '<ANONYMOUS>';
-// rest2.owner = rest2.owner && '<ANONYMOUS>';
-rest1.numGuest &&= '<ANONYMOUS>';
-rest2.numGuest &&= '<ANONYMOUS>';
-
-console.log(rest1);
-console.log(rest2);
