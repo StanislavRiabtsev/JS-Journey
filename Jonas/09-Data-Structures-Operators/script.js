@@ -612,74 +612,138 @@
 // if (users.length > 0) console.log(users[0].name);
 // else console.log('User array empty');
 
-const openingHours = {
-  mon: {
-    open: 12,
-    close: 22,
-  },
-  fri: {
-    open: 11,
-    close: 23,
-  },
-  sat: {
-    open: 0, // Open 24 hours
-    close: 24,
+// const openingHours = {
+//   mon: {
+//     open: 12,
+//     close: 22,
+//   },
+//   fri: {
+//     open: 11,
+//     close: 23,
+//   },
+//   sat: {
+//     open: 0, // Open 24 hours
+//     close: 24,
+//   },
+// };
+
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+//   openingHours: {
+//     thu: {
+//       open: 12,
+//       close: 22,
+//     },
+//     fri: {
+//       open: 11,
+//       close: 23,
+//     },
+//     sat: {
+//       open: 0, // Open 24 hours
+//       close: 24,
+//     },
+//   },
+//   order(starterIndex, mianIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mianIndex]];
+//   },
+//   orderDelivery({ starterIndex = 1, mianIndex = 0, time = '20:00', address }) {
+//     console.log(
+//       `Order recevied! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mianIndex]} will be delivered to ${address} at ${time}`
+//     );
+//   },
+//   orderPasta(ing1, ing2, ing3) {
+//     console.log(
+//       `Here is you declicious pasta with ${ing1}, ${ing2} and ${ing3}`
+//     );
+//   },
+//   orderPizza(mainIngredient, ...otherIngredients) {
+//     console.log(mainIngredient);
+//     console.log(otherIngredients);
+//   },
+// };
+
+// const properties = Object.keys(openingHours);
+// console.log(openingHours);
+// let openStr = `We are open on ${properties.length} days : `;
+
+// for (const day of properties) {
+//   openStr += `${day}, `;
+// }
+// console.log(openStr);
+
+// const values = Object.values(openingHours);
+// console.log(values);
+// const enteris = Object.entries(openingHours);
+// console.log(enteris);
+// for (const [day, { open, close }] of enteris) {
+//   console.log(`On ${day} we open at ${open} and close at ${close}`);
+// }
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
   },
 };
 
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
-  order(starterIndex, mianIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mianIndex]];
-  },
-  orderDelivery({ starterIndex = 1, mianIndex = 0, time = '20:00', address }) {
-    console.log(
-      `Order recevied! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mianIndex]} will be delivered to ${address} at ${time}`
-    );
-  },
-  orderPasta(ing1, ing2, ing3) {
-    console.log(
-      `Here is you declicious pasta with ${ing1}, ${ing2} and ${ing3}`
-    );
-  },
-  orderPizza(mainIngredient, ...otherIngredients) {
-    console.log(mainIngredient);
-    console.log(otherIngredients);
-  },
-};
-
-const properties = Object.keys(openingHours);
-console.log(openingHours);
-let openStr = `We are open on ${properties.length} days : `;
-
-for (const day of properties) {
-  openStr += `${day}, `;
+// 1.
+const player = Object.values(game.scored);
+for (let i = 0; i <= player.length - 1; i++) {
+  let goalStr = `Goal ${i + 1}: ${player[i]}`;
+  console.log(goalStr);
 }
-console.log(openStr);
 
-const values = Object.values(openingHours);
-console.log(values);
-const enteris = Object.entries(openingHours);
-console.log(enteris);
-for (const [day, { open, close }] of enteris) {
-  console.log(`On ${day} we open at ${open} and close at ${close}`);
+// for (const [i, player] of game.scored.entries())
+//   console.log(`Goal ${i + 1}: ${player}`);
+
+// 2.
+const odds = Object.values(game.odds);
+let average = 0;
+for (const odd of odds) average += odd;
+average /= odds.length;
+console.log(average);
+
+// 3.
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victore ${game[team]}`;
+  console.log(`Odd of ${teamStr}: ${odd}`);
 }
