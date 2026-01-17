@@ -591,6 +591,42 @@
 //   },
 // };
 
+// if (restaurant.openingHours && restaurant.openingHours.mon)
+//   console.log(restaurant.openingHours.mon.open);
+
+// console.log(restaurant.openingHours.mon?.open);
+// console.log(restaurant.openingHours?.mon?.open);
+
+// const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+// for (const day of days) {
+//   const open = restaurant.openingHours[day]?.open || 'closed';
+//   console.log(`On ${day}, we open at ${open}`);
+// }
+
+// console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+// console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
+
+// // const users = [{ name: 'Stanislav', email: 'hello@stas.io' }];
+// const users = [];
+// console.log(users[0]?.name ?? 'User array empty');
+// if (users.length > 0) console.log(users[0].name);
+// else console.log('User array empty');
+
+const openingHours = {
+  mon: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -631,23 +667,19 @@ const restaurant = {
   },
 };
 
-if (restaurant.openingHours && restaurant.openingHours.mon)
-  console.log(restaurant.openingHours.mon.open);
+const properties = Object.keys(openingHours);
+console.log(openingHours);
+let openStr = `We are open on ${properties.length} days : `;
 
-console.log(restaurant.openingHours.mon?.open);
-console.log(restaurant.openingHours?.mon?.open);
-
-const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-for (const day of days) {
-  const open = restaurant.openingHours[day]?.open || 'closed';
-  console.log(`On ${day}, we open at ${open}`);
+for (const day of properties) {
+  openStr += `${day}, `;
 }
+console.log(openStr);
 
-console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
-console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
-
-// const users = [{ name: 'Stanislav', email: 'hello@stas.io' }];
-const users = [];
-console.log(users[0]?.name ?? 'User array empty');
-if (users.length > 0) console.log(users[0].name);
-else console.log('User array empty');
+const values = Object.values(openingHours);
+console.log(values);
+const enteris = Object.entries(openingHours);
+console.log(enteris);
+for (const [day, { open, close }] of enteris) {
+  console.log(`On ${day} we open at ${open} and close at ${close}`);
+}
