@@ -782,6 +782,43 @@
 // );
 // console.log(new Set('stanislavriabtsev').size);
 
+// ******** SETS **********
+
+// const italianFoods = new Set([
+//   'pasta',
+//   'gnocchi',
+//   'tomatoes',
+//   'olive oil',
+//   'garlic',
+//   'basil',
+// ]);
+
+// const mexicanFoods = new Set([
+//   'tortillas',
+//   'beans',
+//   'rice',
+//   'tomatoes',
+//   'avocado',
+//   'garlic',
+// ]);
+
+// const commonFoods = italianFoods.intersection(mexicanFoods);
+// console.log(`Intersection:`, commonFoods);
+// console.log([...commonFoods]);
+
+// const italianMexicanFusion = italianFoods.union(mexicanFoods);
+// console.log('Union:', italianMexicanFusion);
+// console.log(...[new Set([...italianFoods, ...mexicanFoods])]);
+
+// const uniqueItalianFoods = italianFoods.difference(mexicanFoods);
+// console.log('Difference italian', uniqueItalianFoods);
+// const uniqueMexicanFoods = mexicanFoods.difference(italianFoods);
+// console.log('Difference mexican', uniqueMexicanFoods);
+// const uniqueItalianAndMexicanFoods =
+//   italianFoods.symmetricDifference(mexicanFoods);
+// console.log(uniqueItalianAndMexicanFoods);
+// console.log(italianFoods.isDisjointFrom(mexicanFoods));
+
 const openingHours = {
   mon: {
     open: 12,
@@ -823,12 +860,12 @@ const restaurant = {
   },
   orderDelivery({ starterIndex = 1, mianIndex = 0, time = '20:00', address }) {
     console.log(
-      `Order recevied! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mianIndex]} will be delivered to ${address} at ${time}`
+      `Order recevied! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mianIndex]} will be delivered to ${address} at ${time}`,
     );
   },
   orderPasta(ing1, ing2, ing3) {
     console.log(
-      `Here is you declicious pasta with ${ing1}, ${ing2} and ${ing3}`
+      `Here is you declicious pasta with ${ing1}, ${ing2} and ${ing3}`,
     );
   },
   orderPizza(mainIngredient, ...otherIngredients) {
@@ -837,37 +874,31 @@ const restaurant = {
   },
 };
 
-const italianFoods = new Set([
-  'pasta',
-  'gnocchi',
-  'tomatoes',
-  'olive oil',
-  'garlic',
-  'basil',
-]);
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze, Italy');
+rest.set(2, 'Lisbon, Portugal');
 
-const mexicanFoods = new Set([
-  'tortillas',
-  'beans',
-  'rice',
-  'tomatoes',
-  'avocado',
-  'garlic',
-]);
+console.log(
+  rest
+    .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+    .set('open', 11)
+    .set('close', 23)
+    .set(true, 'We are open')
+    .set(false, 'We are closed'),
+);
 
-const commonFoods = italianFoods.intersection(mexicanFoods);
-console.log(`Intersection:`, commonFoods);
-console.log([...commonFoods]);
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
 
-const italianMexicanFusion = italianFoods.union(mexicanFoods);
-console.log('Union:', italianMexicanFusion);
-console.log(...[new Set([...italianFoods, ...mexicanFoods])]);
-
-const uniqueItalianFoods = italianFoods.difference(mexicanFoods);
-console.log('Difference italian', uniqueItalianFoods);
-const uniqueMexicanFoods = mexicanFoods.difference(italianFoods);
-console.log('Difference mexican', uniqueMexicanFoods);
-const uniqueItalianAndMexicanFoods =
-  italianFoods.symmetricDifference(mexicanFoods);
-console.log(uniqueItalianAndMexicanFoods);
-console.log(italianFoods.isDisjointFrom(mexicanFoods));
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+console.log(rest.has('categories'));
+rest.delete(2);
+const arr = [1, 2];
+rest.set(arr, 'Test');
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
+console.log(rest.size);
+console.log(rest.get(arr));
