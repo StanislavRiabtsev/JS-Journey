@@ -56,6 +56,7 @@ newPassport(stanislav);
 checkIn(flight, stanislav);
 */
 
+/*  /////////////  Functions Accepting Callback Functions ////////////
 const oneWord = function (str) {
   return str.replace(/ /g, '').toLowerCase();
 };
@@ -81,3 +82,22 @@ const high5 = function () {
 };
 document.body.addEventListener('click', high5);
 ['Stanislav', 'Martha', 'Adam'].forEach(high5);
+*/
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet('Hey');
+greeterHey('Stanislav');
+greeterHey('Steven');
+
+greet('Hello')('Stnislav');
+
+const greet1 = greeting1 => {
+  return name1 => {
+    console.log(`${greeting1} ${name1}`);
+  };
+};
