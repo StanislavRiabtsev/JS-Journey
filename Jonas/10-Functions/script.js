@@ -1,5 +1,6 @@
 'use strict';
 
+/* ///////////  Default Parameters ////////////
 const bookings = [];
 
 const createBooking = function (
@@ -22,3 +23,81 @@ const createBooking = function (
 createBooking('LH123');
 createBooking('LH123', 2, 800);
 createBooking('LH123', 5);
+*/
+
+/* ///////////  Passing Arguments ////////////
+const flight = 'LH234';
+const stanislav = {
+  name: 'Stanislav Riabtsev',
+  passport: 243223452,
+};
+
+const checkIn = function (flightNum, passenger) {
+  flightNum = 'LH999';
+  passenger.name = 'Mr. ' + passenger.name;
+
+  if (passenger.passport === 243223452) {
+    alert('Check in ');
+  } else {
+    alert('Wrong passport');
+  }
+};
+// checkIn(flight, stanislav);
+// console.log(flight);
+// console.log(stanislav);
+
+// const flightNum = flight;
+// const passenger = stanislav;
+
+const newPassport = function (person) {
+  person.passport = Math.trunc(Math.random() * 100000);
+};
+newPassport(stanislav);
+checkIn(flight, stanislav);
+*/
+
+/*  /////////////  Functions Accepting Callback Functions ////////////
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+
+// Higher-order function
+const transformer = function (str, fn) {
+  console.log(`Original string: ${str}`);
+  console.log(`Transformer string: ${fn(str)}`);
+
+  console.log(`Transform by: ${fn.name}`);
+};
+transformer('JavaScript is the best!', upperFirstWord);
+transformer('JavaScript is the best!', oneWord);
+
+// Callback function
+const high5 = function () {
+  console.log('👍');
+};
+document.body.addEventListener('click', high5);
+['Stanislav', 'Martha', 'Adam'].forEach(high5);
+*/
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet('Hey');
+greeterHey('Stanislav');
+greeterHey('Steven');
+
+greet('Hello')('Stnislav');
+
+const greet1 = greeting1 => {
+  return name1 => {
+    console.log(`${greeting1} ${name1}`);
+  };
+};
