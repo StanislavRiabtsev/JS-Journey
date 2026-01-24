@@ -189,7 +189,7 @@ const addVAT2 = addTaxRate(0.23);
 console.log(addVAT2(100));
 */
 
-// ///////////// CHALLENGE #1 /////////////
+/* ///////////// CHALLENGE #1 /////////////
 const poll = {
   question: 'What is your favourite programming language?',
   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
@@ -222,3 +222,19 @@ document
   .addEventListener('click', poll.registerNewAnswer.bind(poll));
 
 poll.displayResults.call({ answer: [5, 2, 3] }, 'string');
+*/
+
+const runOnce = function () {
+  console.log('This will never run again');
+};
+runOnce();
+
+//  Immediately Invoked Function Expressions
+(function () {
+  console.log('This will never run again');
+  const isPrivate = 23;
+})();
+
+console.log(isPrivate);
+
+(() => console.log('This will ALSO never run again'))();
