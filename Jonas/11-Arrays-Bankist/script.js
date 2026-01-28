@@ -142,19 +142,58 @@ movements.forEach(function (mov, i, arr) {
 */
 
 // MAP
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
+// const currencies = new Map([
+//   ['USD', 'United States dollar'],
+//   ['EUR', 'Euro'],
+//   ['GBP', 'Pound sterling'],
+// ]);
 
-currencies.forEach(function (value, key, map) {
-  console.log(`${key}: ${value}`);
-});
+// currencies.forEach(function (value, key, map) {
+//   console.log(`${key}: ${value}`);
+// });
 
-// SET
-const curremciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
-console.log(curremciesUnique);
-curremciesUnique.forEach(function (value, _, map) {
-  console.log(`${value}: ${value}`);
+// // SET
+// const curremciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+// console.log(curremciesUnique);
+// curremciesUnique.forEach(function (value, _, map) {
+//   console.log(`${value}: ${value}`);
+// });
+
+////////////// Map //////////////
+/*
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const eurToUsd = 1.1;
+const movementsUSD = movements.map(mov => mov * eurToUsd);
+console.log(movements);
+console.log(movementsUSD);
+
+const movementsUSDfor = [];
+for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+console.log(movementsUSDfor);
+
+const movementsDescriptions = movements.map((mov, i, arr) => {
+  `Movement ${i + 1} You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(mov)}`;
+
+  if (mov > 0) {
+    return `Movement ${i + 1} You deposited ${mov}`;
+  } else {
+    return `Movement ${i + 1} You withdrew ${Math.abs(mov)}`;
+  }
 });
+console.log(movementsDescriptions);
+*/
+
+////////////// Filter //////////////
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+console.log(deposits);
+
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+console.log(depositsFor);
+const withdrawals = movements.filter(function (mov) {
+  return mov < 0;
+});
+console.log(withdrawals);
