@@ -252,6 +252,7 @@ console.log(totalDepositsUSD);
 */
 
 ////////////// CHALLENGE #3 //////////////
+/*
 const calcAverageHumanAge = ages =>
   ages
     .map(age => (age <= 2 ? 2 * age : 16 + age * 4))
@@ -262,3 +263,12 @@ const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
 const avg2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
 
 console.log(avg1, avg2);
+*/
+
+////////////// FIND //////////////
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const firstWithdrawal = movements.find(mov => mov < 0);
+console.log(firstWithdrawal);
+
+const accont = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(accont);
