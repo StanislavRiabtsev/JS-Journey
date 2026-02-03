@@ -276,6 +276,7 @@ console.log(accont);
 */
 
 ////////////// findLast findLastIndex //////////////
+/*
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 console.log(movements);
 const lastWithdrawal = movements.findLast(mov => mov < 0);
@@ -289,3 +290,27 @@ console.log(latestLargeMovementsIndex);
 console.log(
   `Your latest large movemnts was ${movements.length - latestLargeMovementsIndex - 1} movements ago`,
 );
+*/
+
+////////////// Some and Every //////////////
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// EQUALITY
+console.log(movements.includes(-130));
+
+// SOME: CONDITION
+console.log(movements.some(mov => mov === -130));
+
+const anyDeposits = movements.some(mov => mov > 0);
+console.log(anyDeposits);
+
+// EVERY: CONDITION
+console.log(movements.every(mov => mov > 0));
+console.log(account4.movements.every(mov => mov > 0));
+
+// Separate callback
+const deposit = mov => mov > 0;
+console.log('*******************');
+console.log(movements.some(deposit));
+console.log(movements.every(deposit));
+console.log(movements.filter(deposit));
