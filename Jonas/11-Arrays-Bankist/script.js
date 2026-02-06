@@ -341,6 +341,7 @@ console.log(overalBalance);
 */
 
 ////////////// CHALLENGE #4 //////////////
+/*
 const breeds = [
   {
     breed: 'German Shepherd',
@@ -414,3 +415,35 @@ console.log(breeds.every(breed => breed.averageWeight > 10));
 
 // 7.
 console.log(breeds.some(breed => breed.activities.length >= 3));
+*/
+
+////////////// Sorting Arrays //////////////
+// String
+const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
+console.log(owners.sort());
+
+// Numbers
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+console.log(movements);
+
+// return < 0 A, B (kepp order)
+// return > 0 B, A (switch order)
+
+// Asceniding
+// movements.sort((a, b) => {
+//   if (a > b) return 1;
+//   if (b > a) return -1;
+// });
+// console.log(movements);
+
+movements.sort((a, b) => a - b);
+console.log(movements);
+
+// Descending
+// movements.sort((a, b) => {
+//   if (a > b) return -1;
+//   if (b > a) return 1;
+// });
+
+movements.sort((a, b) => b - a);
+console.log(movements);
