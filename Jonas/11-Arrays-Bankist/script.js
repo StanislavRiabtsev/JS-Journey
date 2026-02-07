@@ -479,6 +479,7 @@ console.log(groupedAccounts);
 */
 
 ////////////// Filling Arrays //////////////
+/*
 const arr = [1, 2, 3, 4, 5, 6, 7];
 console.log(new Array(1, 2, 3, 4, 5, 6, 7));
 
@@ -506,3 +507,16 @@ labelBalance.addEventListener('click', function () {
   );
   console.log(movementsUI);
 });
+*/
+
+////////////// Non-Destructive Alternatives //////////////
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const reversedMov = movements.toReversed();
+console.log(reversedMov);
+
+// to Sorted sort, toSpliced (splice)
+// movements[1] = 2000;
+const newMovements = movements.with(1, 2000);
+
+console.log(newMovements);
