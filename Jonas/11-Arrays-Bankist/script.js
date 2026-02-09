@@ -233,7 +233,7 @@ const calcAverageHumanAge = function (ages) {
   const humanAge = ages.map(age => (age <= 2 ? 2 * age : 16 + age * 4));
   console.log(humanAge);
   const adults = humanAge.filter(age => age >= 18);
-  const averange = adults.reduce((acc, age) => acc + age, 0) / adults.lenght;
+  const averange = adults.reduce((acc, age) => acc + age, 0) / adults.length;
   return averange;
 };
 
@@ -275,8 +275,8 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const firstWithdrawal = movements.find(mov => mov < 0);
 console.log(firstWithdrawal);
 
-const accont = accounts.find(acc => acc.owner === 'Jessica Davis');
-console.log(accont);
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(account);
 */
 
 ////////////// findLast findLastIndex //////////////
@@ -286,13 +286,13 @@ console.log(movements);
 const lastWithdrawal = movements.findLast(mov => mov < 0);
 console.log(lastWithdrawal);
 
-// 'Your latest large movemnts was X movements ago'
+// 'Your latest large movements was X movements ago'
 const latestLargeMovementsIndex = movements.findLastIndex(
   mov => Math.abs(mov) > 1000,
 );
 console.log(latestLargeMovementsIndex);
 console.log(
-  `Your latest large movemnts was ${movements.length - latestLargeMovementsIndex - 1} movements ago`,
+  `Your latest large movements was ${movements.length - latestLargeMovementsIndex - 1} movements ago`,
 );
 */
 
@@ -431,7 +431,7 @@ console.log(owners.sort());
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 console.log(movements);
 
-// return < 0 A, B (kepp order)
+// return < 0 A, B (kep order)
 // return > 0 B, A (switch order)
 
 // Asceniding
@@ -524,7 +524,7 @@ console.log(newMovements);
 */
 
 ////////////// Array Methods Practice //////////////
-
+/*
 // 1.
 const bankDepositSum = accounts
   .flatMap(acc => acc.movements)
@@ -584,3 +584,75 @@ const convertTitleCase = function (title) {
 console.log(convertTitleCase('this is a nice title'));
 console.log(convertTitleCase('this is a LONG title but not too long'));
 console.log(convertTitleCase('and here is another title with an EXAMPLE'));
+*/
+
+////////////// CHALLENGE #5 //////////////
+const dogs = [
+  { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+  { weight: 8, curFood: 200, owners: ['Matilda'] },
+  { weight: 13, curFood: 275, owners: ['Sarah', 'John', 'Leo'] },
+  { weight: 18, curFood: 244, owners: ['Joe'] },
+  { weight: 32, curFood: 340, owners: ['Michael'] },
+];
+
+// 1.
+dogs.forEach(dog => (dog.recFood = Math.floor(dog.weight ** 0.75 * 28)));
+console.log(dogs);
+
+// 2.
+const dogSarah = dogs.find(dog => dog.owners.includes('Sarah'));
+console.log(
+  `Sarah's dog eats too ${
+    dogSarah.curFood > dogSarah.recFood ? 'much' : 'little'
+  }`,
+);
+
+// 3.
+const ownersTooMuch = dogs
+  .filter(dog => dog.curFood > dog.recFood)
+  .flatMap(dog => dog.owners);
+const ownersTooLittle = dogs
+  .filter(dog => dog.curFood < dog.recFood)
+  .flatMap(dog => dog.owners);
+
+console.log(ownersTooMuch);
+console.log(ownersTooLittle);
+
+// 4.
+console.log(`${ownersTooMuch.join(' and ')}'s dogs eat too much!`);
+console.log(`${ownersTooLittle.join(' and ')}'s dogs eat too little!`);
+
+// 5.
+console.log(dogs.some(dog => dog.curFood === dog.recFood));
+
+// 6.
+const checkEatingOkay = dog =>
+  dog.curFood < dog.recFood * 1.1 && dog.curFood > dog.recFood * 0.9;
+
+console.log(dogs.every(checkEatingOkay));
+
+// 7.
+const dogsEatingOkay = dogs.filter(checkEatingOkay);
+console.log(dogsEatingOkay);
+
+// 8.
+const dogsGroupedByPortion = Object.groupBy(dogs, dog => {
+  if (dog.curFood > dog.recFood) {
+    console.log('exact');
+  } else if (dog.curFood < dog.recFood) {
+    console.log('too-much');
+  } else {
+    console.log('too-little');
+  }
+});
+
+// 9.
+const dogsGroupedByOwners = Object.groupBy(
+  dogs,
+  dog => `${dog.owners.length} - owners`,
+);
+console.log(dogsGroupedByOwners);
+
+// 10.
+const dogsSorted = dogs.toSorted((a, b) => a.recFood - b.recFood);
+console.log(dogsSorted);
