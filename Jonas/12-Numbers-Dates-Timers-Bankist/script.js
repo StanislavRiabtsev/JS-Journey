@@ -355,6 +355,7 @@ labelBalance.addEventListener('click', function () {
 */
 
 //////////////// The Remainder Operator ///////////////
+/*
 const diameter = 287_460_000_000;
 console.log(diameter);
 
@@ -369,3 +370,31 @@ console.log(PI);
 
 console.log(Number('230_000'));
 console.log(parseInt('230_000'));
+*/
+
+//////////////// BigInt ///////////////
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+
+console.log(4363402934754132423440932049204320234n);
+console.log(BigInt(4363402934754132423440932049204320234));
+
+// Operations
+console.log(10000n + 10000n);
+console.log(435345352842304567484678n * 234293849832n);
+// console.log(Math.sqrt(16n));
+
+const huge = 2342389528358329329n;
+const num = 23;
+console.log(huge * BigInt(num));
+
+// Exeptions
+console.log(20n > 15);
+console.log(20n === 20);
+console.log(20n == 20);
+
+console.log(huge + ' is REALLY big!!!');
+
+// Divisions
+console.log(10n / 3n);
+console.log(10 / 3);
