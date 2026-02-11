@@ -326,6 +326,7 @@ console.log(+(2.345).toFixed(2));
 */
 
 //////////////// The Remainder Operator ///////////////
+/*
 console.log(5 % 2);
 console.log(5 / 2);
 
@@ -351,3 +352,20 @@ labelBalance.addEventListener('click', function () {
     if (i % 3 === 0) row.style.backgroundColor = 'blue';
   });
 });
+*/
+
+//////////////// The Remainder Operator ///////////////
+const diameter = 287_460_000_000;
+console.log(diameter);
+
+const priceCents = 345_99;
+console.log(priceCents);
+
+const transferFee1 = 15_00;
+const transferFee2 = 1_500;
+
+const PI = 3.14_15;
+console.log(PI);
+
+console.log(Number('230_000'));
+console.log(parseInt('230_000'));
