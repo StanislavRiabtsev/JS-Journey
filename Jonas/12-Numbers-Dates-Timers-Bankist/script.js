@@ -450,6 +450,7 @@ console.log(days1);
 */
 
 //////////////// Internationalizing Numbers (Intl) ///////////////
+/*
 const num = 23336234463.43;
 const options = {
   style: 'currency',
@@ -465,3 +466,20 @@ console.log(
   'Browser:',
   new Intl.NumberFormat(navigator.language, options).format(num),
 );
+*/
+
+//////////////// Timers: setTimeout and setInterval ///////////////
+// setTimeout
+const ingredients = ['olives', 'spinach'];
+const pizaaTimer = setTimeout(
+  (ing1, ing2) => console.log(`Here is your pizza with ${ing1} and ${ing2}`),
+  3000,
+  ...ingredients,
+);
+if (ingredients.includes('spinach')) clearTimeout(pizaaTimer);
+
+// setInterval
+setInterval(function () {
+  const now = new Date();
+  console.log(now);
+}, 3000);
