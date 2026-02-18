@@ -30,6 +30,8 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+/////////////  Selecting, Creating, and Deleting Elements /////////////
+/*
 // Selecting elements
 const header = document.querySelector('.header');
 const allSections = document.querySelectorAll('.section');
@@ -63,7 +65,10 @@ document
     // message.remove();
     message.parentElement.removeChild(message);
   });
+*/
 
+/////////////  Styles, Attributes and Classes /////////////
+/*
 // Styles
 message.style.backgroundColor = '#37383d';
 message.style.width = '120%';
@@ -109,3 +114,33 @@ logo.classList.contains('c');
 
 // Don't use
 logo.className = 'stanislav';
+*/
+
+///////////// Implementing Smooth Scrolling /////////////
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', function (e) {
+  e.preventDefault();
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+  console.log('Current scroll (X/Y)', window.pageXOffset, pageYOffset);
+  console.log(
+    'Height/Width viewport',
+    document.documentElement.clientHeight,
+    document.documentElement.clientWidth,
+  );
+
+  // Scrolling
+  // window.scrollTo(
+  //   s1coords.left + window.pageXOffset,
+  //   s1coords.top + window.pageYOffset,
+  // );
+  
+  // window.scrollTo({
+  //   left: s1coords.left + window.pageXOffset,
+  //   top: s1coords.top + window.pageYOffset,
+  //   behavior: 'smooth',
+  // });
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
