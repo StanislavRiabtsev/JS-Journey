@@ -30,6 +30,8 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+/////////////  Selecting, Creating, and Deleting Elements /////////////
+/*
 // Selecting elements
 const header = document.querySelector('.header');
 const allSections = document.querySelectorAll('.section');
@@ -63,7 +65,10 @@ document
     // message.remove();
     message.parentElement.removeChild(message);
   });
+*/
 
+/////////////  Styles, Attributes and Classes /////////////
+/*
 // Styles
 message.style.backgroundColor = '#37383d';
 message.style.width = '120%';
@@ -109,3 +114,70 @@ logo.classList.contains('c');
 
 // Don't use
 logo.className = 'stanislav';
+*/
+
+///////////// Implementing Smooth Scrolling /////////////
+/*
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', function (e) {
+  e.preventDefault();
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+  console.log('Current scroll (X/Y)', window.pageXOffset, pageYOffset);
+  console.log(
+    'Height/Width viewport',
+    document.documentElement.clientHeight,
+    document.documentElement.clientWidth,
+  );
+
+  // Scrolling
+  // window.scrollTo(
+  //   s1coords.left + window.pageXOffset,
+  //   s1coords.top + window.pageYOffset,
+  // );
+  
+  // window.scrollTo({
+  //   left: s1coords.left + window.pageXOffset,
+  //   top: s1coords.top + window.pageYOffset,
+  //   behavior: 'smooth',
+  // });
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
+*/
+
+///////////// Types of Events and Event Handlers /////////////
+/*
+const h1 = document.querySelector('h1');
+const alertH1 = function (e) {
+  alert('addEventListener: Great! You are reading the heading');
+};
+h1.addEventListener('mouseenter', alertH1);
+
+setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
+
+// h1.onmouseenter = function (e) {
+//   alert('addEventListener: Great! You are reading the heading');
+// };
+*/
+
+///////////// Event Propagation /////////////
+// rgb(255,255,255)
+const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1));
+const randomColor = () =>
+  `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+console.log(randomColor(0, 255));
+
+document.querySelector('.nav__link').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  e.stopPropagation();
+});
+
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+});
+
+document.querySelector('.nav').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+});
