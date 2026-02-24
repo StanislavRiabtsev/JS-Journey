@@ -163,6 +163,7 @@ setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
 */
 
 ///////////// Event Propagation /////////////
+/*
 // rgb(255,255,255)
 const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1));
 const randomColor = () =>
@@ -181,3 +182,45 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 document.querySelector('.nav').addEventListener('click', function (e) {
   this.style.backgroundColor = randomColor();
 });
+*/
+
+///////////// Event Delegation: Implementing Page Navigation /////////////
+/*
+// Going downwards: child
+const h1 = document.querySelector('h1');
+console.log(h1.querySelectorAll('.highlight'));
+console.log(h1.childNodes);
+console.log(h1.children);
+h1.firstElementChild.style.color = 'white';
+
+// Going upwards: parents
+console.log(h1.parentNode);
+console.log(h1.parentElement);
+
+h1.closest('.header').style.background = 'var(--gradient-secondary)';
+
+// Going sideways: slibings
+console.log(h1.previousElementSibling);
+console.log(h1.nextElementSibling);
+
+console.log(h1.previousSibling);
+console.log(h1.nextSibling);
+
+console.log(h1.parentElement.children);
+*/
+
+///////////// Lifecycle DOM Events /////////////
+
+documentq.addEventListener('DOMContentLoaded', function (e) {
+  console.log('DOM', e);
+});
+
+window.addEventListener('load', function (e) {
+  console.log('Page fully loaded', e);
+});
+
+// window.addEventListener('beforeunload', function (e) {
+//   e.preventDefault();
+//   console.log(e);
+//   e.returnValue = '';
+// });
