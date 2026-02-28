@@ -65,6 +65,7 @@ console.dir(x => x + 1);
 */
 
 //////////////// CHALLENGE #1 //////////////
+/*
 const Car = function (make, speed) {
   this.make = make;
   this.speed = speed;
@@ -87,3 +88,36 @@ bmw.accelerate();
 mercedes.accelerate();
 bmw.brake();
 mercedes.brake();
+*/
+
+//////////////// ES6 Classes //////////////
+
+// class expression
+// const PersonCl = class{}
+
+// class declaration
+class PersonCl {
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+
+  // Methods will be added to .prototype property
+  caclAge() {
+    console.log(2037 - this.birthYear);
+  }
+
+  greet() {
+    console.log(`Hey ${this.firstName}`);
+  }
+}
+
+const jessica = new PersonCl('Jessica', 1996);
+console.log(jessica);
+jessica.caclAge();
+
+// PersonCl.prototype.greet = function () {
+//   console.log(`Hey ${this.firstName}`);
+// };
+jessica.greet();
+
