@@ -1,7 +1,7 @@
 'use strict';
 
 //////////////// Constructor Functions and the new Operator //////////////
-/*
+
 const Person = function (firstName, birthYear) {
   this.firstName = firstName;
   this.birthYear = birthYear;
@@ -27,6 +27,12 @@ const jay = 'Jay';
 
 console.log(stanislav instanceof Person);
 console.log(jay instanceof Person);
+
+Person.hey = function () {
+  console.log('Hey there');
+};
+
+Person.hey();
 
 //////////////// Prototypes //////////////
 Person.prototype.calcAge = function () {
@@ -62,7 +68,6 @@ console.log(arr.unique());
 
 const h1 = document.querySelector('h1');
 console.dir(x => x + 1);
-*/
 
 //////////////// CHALLENGE #1 //////////////
 /*
@@ -101,7 +106,7 @@ class PersonCl {
     this.fullName = fullName;
     this.birthYear = birthYear;
   }
-
+  // Instance methods
   // Methods will be added to .prototype property
   caclAge() {
     console.log(2037 - this.birthYear);
@@ -121,6 +126,11 @@ class PersonCl {
   get fullName() {
     return this._fullName;
   }
+
+  // Static method
+  static hey() {
+    console.log('HEYYYY');
+  }
 }
 
 const jessica = new PersonCl('Jessica Davis', 1996);
@@ -133,6 +143,8 @@ jessica.caclAge();
 jessica.greet();
 
 const walter = new PersonCl('Walter White', 1965);
+
+PersonCl.hey();
 
 const account = {
   owner: 'stanislav',
