@@ -96,7 +96,7 @@ mercedes.brake();
 */
 
 //////////////// ES6 Classes //////////////
-
+/*
 // class expression
 // const PersonCl = class{}
 
@@ -163,3 +163,5 @@ console.log(account.latest);
 account.latest = 200;
 
 console.log(account.movements);
+*/
+//////////////// Object.create //////////////
