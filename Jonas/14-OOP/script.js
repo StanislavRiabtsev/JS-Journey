@@ -96,7 +96,7 @@ mercedes.brake();
 */
 
 //////////////// ES6 Classes //////////////
-/*
+
 // class expression
 // const PersonCl = class{}
 
@@ -163,5 +163,23 @@ console.log(account.latest);
 account.latest = 200;
 
 console.log(account.movements);
-*/
-//////////////// Object.create //////////////
+const PersonProto = {
+  caclAge() {
+    console.log(2037 - this.birthYear);
+  },
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+
+const steven = Object.create(PersonProto);
+console.log(steven);
+steven.name = 'Steven';
+steven.birthYear = 2002;
+steven.caclAge();
+
+console.log(steven.__proto__);
+
+const sarah = Object.create(PersonProto);
+sarah.init('Sarah', 1979);
