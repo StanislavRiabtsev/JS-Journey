@@ -1,7 +1,7 @@
 'use strict';
 
 //////////////// Constructor Functions and the new Operator //////////////
-
+/*
 const Person = function (firstName, birthYear) {
   this.firstName = firstName;
   this.birthYear = birthYear;
@@ -33,8 +33,9 @@ Person.hey = function () {
 };
 
 Person.hey();
-
+*/
 //////////////// Prototypes //////////////
+/*
 Person.prototype.calcAge = function () {
   console.log(2037 - this.birthYear);
 };
@@ -68,7 +69,7 @@ console.log(arr.unique());
 
 const h1 = document.querySelector('h1');
 console.dir(x => x + 1);
-
+*/
 //////////////// CHALLENGE #1 //////////////
 /*
 const Car = function (make, speed) {
@@ -186,7 +187,7 @@ sarah.init('Sarah', 1979);
 */
 
 //////////////// CHALLENGE #2 //////////////
-
+/*
 class CarCl {
   constructor(make, speed) {
     this.make = make;
@@ -216,3 +217,32 @@ ford.accelerate();
 console.log(ford.speedUS);
 ford.speedUS = 50;
 console.log(ford.speedUS);
+*/
+
+//////////////// Inheritance Between "Classes": Constructor Functions //////////////
+
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+
+Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
+
+const Student = function (firstName, birthYear, course) {
+  Person.call(this, firstName, birthYear);
+  this.course = course;
+};
+
+// Linking prototypes
+Student.prototype = Object.create(Person.prototype);
+
+Student.prototype.introduce = function () {
+  console.log(`My name is ${this.firstName} and i study ${this.course}`);
+};
+
+const mike = new Student('Mike', 2020, 'Computer Science');
+console.log(mike);
+mike.introduce();
+mike.calcAge();
