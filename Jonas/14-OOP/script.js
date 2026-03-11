@@ -454,9 +454,11 @@ class Account {
 
   deposit(val) {
     this.#movements.push(val);
+    return this;
   }
   widthraw(val) {
     this.deposit(-val);
+    return this;
   }
 
   #approveLoan(val) {
@@ -468,6 +470,7 @@ class Account {
       this.deposit(val);
       console.log(`Loan approved`);
     }
+    return this;
   }
 
   static test() {
@@ -476,8 +479,16 @@ class Account {
 }
 
 const acc1 = new Account(' Jonas', 'EUR', 1111);
-acc1.deposit(300);
-acc1.widthraw(199);
+// acc1.deposit(300);
+// acc1.widthraw(199);
+
+acc1
+  .deposit(300)
+  .widthraw(100)
+  .widthraw(50)
+  .requestLoan(25000)
+  // .getMovements()
+  .widthraw(400);
 
 console.log(acc1);
 Account.test();
